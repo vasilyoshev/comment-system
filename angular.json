@@ -42,6 +42,7 @@
                 }
               ],
               "baseHref": "https://draawn.github.io/comment-system/",
+              "deployUrl": "https://draawn.github.io/comment-system/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

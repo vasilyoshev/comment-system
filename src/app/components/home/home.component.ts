@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
   public types = ['Low', 'Medium', 'High'];
   public addCommentForm: FormGroup;
+  public comments: Array<any>;
 
   constructor(private fb: FormBuilder) {}
 
@@ -24,6 +25,6 @@ export class HomeComponent implements OnInit {
       return;
     }
 
-
+    let comment = {};
   }
 }

@@ -14,9 +14,9 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './reducers';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { CommentDetailsComponent } from './comment-details/comment-details.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
 
 const materialModuleImports = [
   MatToolbarModule,

@@ -40,6 +40,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "https://draawn.github.io/comment-system/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

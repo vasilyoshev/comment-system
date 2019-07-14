@@ -1,3 +1,4 @@
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeleteCommentDialogComponent } from './delete-comment-dialog.component';
@@ -8,9 +9,15 @@ describe('DeleteCommentDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeleteCommentDialogComponent ]
+      declarations: [DeleteCommentDialogComponent],
+      imports: [
+        MatDialogModule
+      ],
+      providers: [
+        { provide: MatDialogRef, useValue: { close: (dialogResult: any) => { } } }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +28,18 @@ describe('DeleteCommentDialogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('onNoClick()', () => {
+    it('should close dialogRef on cancel', () => {
+      // Given
+      const dialogCloseSpy = spyOn(component['dialogRef'], 'close');
+
+      // When
+      component.onNoClick();
+
+      // Then
+      expect(dialogCloseSpy).toHaveBeenCalledTimes(1);
+    });
   });
 });

@@ -6,10 +6,10 @@ import { CommentDetailsComponent } from './components/comment-details/comment-de
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', component: HomeComponent, data: { animation: 'Home' }
   },
   {
-    path: 'comment/:id', component: CommentDetailsComponent
+    path: 'comment/:id', component: CommentDetailsComponent, data: { animation: 'Comment' }
   },
   {
     path: '**', redirectTo: ''

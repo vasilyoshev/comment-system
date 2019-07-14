@@ -1,0 +1,84 @@
+{
+  "configVersion": 1,
+  "timestamp": 1563126695058,
+  "index": "https://draawn.github.io/comment-system/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://draawn.github.io/comment-system/favicon.ico",
+        "https://draawn.github.io/comment-system/index.html",
+        "https://draawn.github.io/comment-system/main-es2015.b5c5952afcf1292e8bb9.js",
+        "https://draawn.github.io/comment-system/main-es5.eb1a751abaea88fa9b9a.js",
+        "https://draawn.github.io/comment-system/polyfills-es2015.4d31cca2afc45cfd85b5.js",
+        "https://draawn.github.io/comment-system/polyfills-es5.2219c87348e60efc0076.js",
+        "https://draawn.github.io/comment-system/runtime-es2015.d2583efc1f2b18701419.js",
+        "https://draawn.github.io/comment-system/runtime-es5.7bee55f1729f074f92f0.js",
+        "https://draawn.github.io/comment-system/styles.52c37797589b472e9e7d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://draawn.github.io/comment-system/assets/high.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-128x128.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-144x144.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-152x152.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-192x192.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-384x384.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-512x512.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-72x72.png",
+        "https://draawn.github.io/comment-system/assets/icons/icon-96x96.png",
+        "https://draawn.github.io/comment-system/assets/low.png",
+        "https://draawn.github.io/comment-system/assets/medium.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://draawn.github.io/comment-system/assets/high.png": "0c6623fcfedac9727c0c88d182c5ae978c20c7ea",
+    "https://draawn.github.io/comment-system/assets/icons/icon-128x128.png": "f351f44b1f1211ddeb61916a6643a7ef77f660c1",
+    "https://draawn.github.io/comment-system/assets/icons/icon-144x144.png": "4a1122c0b8b9fadf7793793e21cc7b5d312b3a8e",
+    "https://draawn.github.io/comment-system/assets/icons/icon-152x152.png": "1363d48b1a8f6a10ad66da7a312c85da6afd121e",
+    "https://draawn.github.io/comment-system/assets/icons/icon-192x192.png": "cab69a9f9a30f6a061b0d6b775fc8ad4cfa84faf",
+    "https://draawn.github.io/comment-system/assets/icons/icon-384x384.png": "7e1a24da4f3eba77ab9ba2421c50e791c39f77fb",
+    "https://draawn.github.io/comment-system/assets/icons/icon-512x512.png": "4add3d1f1b51fe6aa33fa44d7e8487c02e1c95ea",
+    "https://draawn.github.io/comment-system/assets/icons/icon-72x72.png": "3b00c1987ab9a7490edaeb566c2def63d7f31f19",
+    "https://draawn.github.io/comment-system/assets/icons/icon-96x96.png": "8e3637c5a78b5f487baf5eda510822c334e44f99",
+    "https://draawn.github.io/comment-system/assets/low.png": "3518bd9b9a10dcd60df0bc9514f557001b080e9e",
+    "https://draawn.github.io/comment-system/assets/medium.png": "6e44fb948b8b7dfc373a4bc2a7493aa503717a20",
+    "https://draawn.github.io/comment-system/favicon.ico": "3efa0ff794f37cfafd551f0ea154e312d9d9dbef",
+    "https://draawn.github.io/comment-system/index.html": "1a46e30b5f7f900e2035fa237d9fd8e7dd0594b3",
+    "https://draawn.github.io/comment-system/main-es2015.b5c5952afcf1292e8bb9.js": "7652c6182db7235afdf46809d533ba4d8406cd64",
+    "https://draawn.github.io/comment-system/main-es5.eb1a751abaea88fa9b9a.js": "81f5c18035ba4c55b8cd2f79725a151ca7e2b734",
+    "https://draawn.github.io/comment-system/polyfills-es2015.4d31cca2afc45cfd85b5.js": "058203dab4ba87056d6976029ba60fa42e6f75b9",
+    "https://draawn.github.io/comment-system/polyfills-es5.2219c87348e60efc0076.js": "6c9688c6586bfcf669879655ba5874ef1d2b4bcf",
+    "https://draawn.github.io/comment-system/runtime-es2015.d2583efc1f2b18701419.js": "6c7d2b43d727d3679fb50ed5c9d25a295b8c0c9c",
+    "https://draawn.github.io/comment-system/runtime-es5.7bee55f1729f074f92f0.js": "6c7d2b43d727d3679fb50ed5c9d25a295b8c0c9c",
+    "https://draawn.github.io/comment-system/styles.52c37797589b472e9e7d.css": "7b954a4e356b9b4670f882d68997881e13ec7524"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

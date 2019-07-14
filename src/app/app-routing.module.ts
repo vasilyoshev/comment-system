@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'comment', component: CommentDetailsComponent
+    path: 'comment/:id', component: CommentDetailsComponent
   },
   {
     path: '**', redirectTo: ''

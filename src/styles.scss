@@ -8,3 +8,13 @@ html, body {
 body {
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+mat-card {
+    margin: 25px 25px 0;
+}
+
+mat-card-header {
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 10px;
+}

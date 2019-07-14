@@ -9,14 +9,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { StoreModule } from '@ngrx/store';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { reducers, metaReducers } from './reducers';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
+import { CommentComponent } from './comment/comment.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 const materialModuleImports = [
   MatToolbarModule,
@@ -32,7 +31,9 @@ const materialModuleImports = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CommentDetailsComponent
+    CommentDetailsComponent,
+    CommentComponent,
+    AddCommentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,13 +41,6 @@ const materialModuleImports = [
     AppRoutingModule,
     BrowserAnimationsModule,
     ...materialModuleImports,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]

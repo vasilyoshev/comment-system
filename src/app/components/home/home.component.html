@@ -1,28 +1,8 @@
-<mat-card>
-    <mat-card-header>
-        Add a new comment:
-    </mat-card-header>
-    <mat-card-content>
-        <form [formGroup]="addCommentForm" (ngSubmit)="submit()">
-            <mat-form-field>
-                <mat-select formControlName="type" placeholder="Type">
-                    <mat-option *ngFor="let type of types" value="type">
-                        {{ type }}
-                    </mat-option>
-                </mat-select>
-                <mat-error *ngIf="addCommentForm.get('type').hasError('required')">
-                    Type is required.
-                </mat-error>
-            </mat-form-field>
+<app-comment
+    *ngFor="let comment of comments"
+    [routerLink]="['/comment', comment.id]"
+    [comment]="comment"
+    class="comment"
+></app-comment>
 
-            <mat-form-field>
-                <input matInput formControlName="comment" placeholder="Comment">
-                <mat-error *ngIf="addCommentForm.get('comment').hasError('required')">
-                    Comment is required.
-                </mat-error>
-            </mat-form-field>
-
-            <button mat-button color="primary" type="submit" [disabled]="addCommentForm.invalid">Submit</button>
-        </form>
-    </mat-card-content>
-</mat-card>
+<app-add-comment></app-add-comment>

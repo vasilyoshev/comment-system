@@ -1,30 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+
+import { CommentInfo } from './../../interfaces/comment.interface';
+import { CommentService } from './../../services/comment.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  public types = ['Low', 'Medium', 'High'];
-  public addCommentForm: FormGroup;
-  public comments: Array<any>;
+export class HomeComponent {
+  public comments: Array<CommentInfo>;
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.addCommentForm = this.fb.group({
-      type: ['', [Validators.required]],
-      comment: ['', [Validators.required]]
-    });
-  }
-
-  public submit() {
-    if (this.addCommentForm.invalid) {
-      return;
-    }
-
-    let comment = {};
+  constructor(private commentService: CommentService) {
+    this.comments = this.commentService.comments;
   }
 }

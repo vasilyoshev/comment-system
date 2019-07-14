@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { CommentInfo } from './../../interfaces/comment.interface';
+import { CommentInfo } from '../../shared/interfaces/comment.interface';
 import { CommentService } from './../../services/comment.service';
 
 @Component({

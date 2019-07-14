@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { CommentInfo } from '../interfaces/comment.interface';
+import { CommentInfo } from '../shared/interfaces/comment.interface';
 
 @Injectable({
   providedIn: 'root'

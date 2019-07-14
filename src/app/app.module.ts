@@ -15,10 +15,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
-import { CommentComponent } from './comment/comment.component';
-import { AddCommentComponent } from './add-comment/add-comment.component';
-import { DeleteCommentDialogComponent } from './delete-comment-dialog/delete-comment-dialog.component';
-import { CommentFormComponent } from './comment-form/comment-form.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { AddCommentComponent } from './components/add-comment/add-comment.component';
+import { DeleteCommentDialogComponent } from './components/delete-comment-dialog/delete-comment-dialog.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
 
 const materialModuleImports = [
   MatToolbarModule,
@@ -28,7 +28,7 @@ const materialModuleImports = [
   MatFormFieldModule,
   MatSelectModule,
   MatDialogModule
-]
+];
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ const materialModuleImports = [
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ...materialModuleImports,
+    ...materialModuleImports
   ],
   providers: [],
   entryComponents: [

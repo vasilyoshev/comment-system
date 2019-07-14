@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { CommentInfo } from '../interfaces/comment.interface';
-import { CommentService } from './../services/comment.service';
+import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentService } from '../../services/comment.service';
 import { DeleteCommentDialogComponent } from '../delete-comment-dialog/delete-comment-dialog.component';
+import { CommentTypesEnum } from 'src/app/shared/enums/comment-types.enum';
 
 @Component({
   selector: 'app-comment',
@@ -25,7 +26,7 @@ export class CommentComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initProps();
   }
 
@@ -45,14 +46,16 @@ export class CommentComponent implements OnInit {
     this.imgSrc = this.getImgSrc(this.comment.type);
   }
 
-  private getImgSrc(type: string): string {
+  private getImgSrc(type: CommentTypesEnum): string {
     switch (type) {
-      case 'Low': // TODO use the enum
+      case CommentTypesEnum.Low:
         return 'assets/low.png';
-      case 'Medium':
+      case CommentTypesEnum.Medium:
         return 'assets/medium.png';
-      case 'High':
+      case CommentTypesEnum.High:
         return 'assets/high.png';
+      default:
+        return undefined;
     }
   }
 }

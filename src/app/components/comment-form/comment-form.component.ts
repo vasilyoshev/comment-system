@@ -3,8 +3,9 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 import uuid from 'uuid/v4';
 
-import { CommentInfo } from '../interfaces/comment.interface';
-import { CommentService } from '../services/comment.service';
+import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentService } from '../../services/comment.service';
+import { CommentTypesEnum } from '../../../app/shared/enums/comment-types.enum';
 
 @Component({
   selector: 'app-comment-form',
@@ -17,13 +18,19 @@ export class CommentFormComponent implements OnInit {
   @Output() submitForm = new EventEmitter();
 
   public comment: CommentInfo;
-  public types = ['Low', 'Medium', 'High'];
+  public types: Array<CommentTypesEnum>;
   public addCommentForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private commentService: CommentService
-  ) { }
+  ) {
+    this.types = [
+      CommentTypesEnum.Low,
+      CommentTypesEnum.Medium,
+      CommentTypesEnum.High
+    ];
+  }
 
   ngOnInit(): void {
     this.comment = this.commentService.getComment(this.id) || {} as CommentInfo;
@@ -43,7 +50,7 @@ export class CommentFormComponent implements OnInit {
     this.comment.title = this.addCommentForm.value.title;
     this.comment.id = this.id || uuid();
     this.commentService.addComment(this.comment);
-    
+
     this.comment = {} as CommentInfo;
     this.submitForm.emit();
   }

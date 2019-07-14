@@ -16,4 +16,13 @@ export class CommentService {
   getComment(id: string): CommentInfo {
     return this.comments.find((comment: CommentInfo) => comment.id === id);
   }
+
+  deleteComment(id: string): void {
+    for (let i = 0; i < this.comments.length; i++) {
+      if (this.comments[i].id === id) {
+        this.comments.splice(i, 1);
+        return;
+      }
+    }
+  }
 }

@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
 import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { DeleteCommentDialogComponent } from './delete-comment-dialog/delete-comment-dialog.component';
 
 const materialModuleImports = [
   MatToolbarModule,
@@ -23,7 +25,8 @@ const materialModuleImports = [
   MatCardModule,
   MatInputModule,
   MatFormFieldModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDialogModule
 ]
 
 @NgModule({
@@ -33,7 +36,8 @@ const materialModuleImports = [
     HomeComponent,
     CommentDetailsComponent,
     CommentComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    DeleteCommentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,9 @@ const materialModuleImports = [
     ...materialModuleImports,
   ],
   providers: [],
+  entryComponents: [
+    DeleteCommentDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

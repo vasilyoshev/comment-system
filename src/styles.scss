@@ -16,3 +16,9 @@ mat-card {
 mat-card-header {
     margin-bottom: 10px;
 }
+
+@media (max-width: 575px) {
+    mat-card {
+        margin: 15px 0;
+    }
+}

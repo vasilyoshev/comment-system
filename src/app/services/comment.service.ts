@@ -13,11 +13,18 @@ export class CommentService {
     this.comments = [];
   }
 
-  getComment(id: string): CommentInfo {
+  public getComment(id: string): CommentInfo {
     return this.comments.find((comment: CommentInfo) => comment.id === id);
   }
 
-  deleteComment(id: string): void {
+  public addComment(comment: CommentInfo): void {
+    if (!this.getComment(comment.id)) {
+      this.comments.push(comment);
+    }
+    this.comments.sort((a: CommentInfo, b: CommentInfo) => (a.date < b.date) ? 1 : ((b.date < a.date) ? -1 : 0));
+  }
+
+  public deleteComment(id: string): void {
     for (let i = 0; i < this.comments.length; i++) {
       if (this.comments[i].id === id) {
         this.comments.splice(i, 1);

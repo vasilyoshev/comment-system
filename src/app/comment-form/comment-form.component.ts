@@ -42,11 +42,9 @@ export class CommentFormComponent implements OnInit {
     this.comment.type = this.addCommentForm.value.type;
     this.comment.title = this.addCommentForm.value.title;
     this.comment.id = this.id || uuid();
-
-    if (!this.id) {
-      this.commentService.comments.push(this.comment);
-      this.comment = {} as CommentInfo;
-    }
+    this.commentService.addComment(this.comment);
+    
+    this.comment = {} as CommentInfo;
     this.submitForm.emit();
   }
 }

@@ -1,8 +1,8 @@
+<app-add-comment></app-add-comment>
+
 <app-comment
     *ngFor="let comment of comments"
     [routerLink]="['/comment', comment.id]"
     [comment]="comment"
     class="comment"
 ></app-comment>
-
-<app-add-comment></app-add-comment>

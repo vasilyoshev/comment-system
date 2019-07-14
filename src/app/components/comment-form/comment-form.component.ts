@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormGroupDirective } from '@angular/forms';
 
 import uuid from 'uuid/v4';
 
@@ -40,7 +40,7 @@ export class CommentFormComponent implements OnInit {
     });
   }
 
-  public submit(): void {
+  public submit(formDirective: FormGroupDirective): void {
     if (this.addCommentForm.invalid) {
       return;
     }
@@ -51,7 +51,9 @@ export class CommentFormComponent implements OnInit {
     this.comment.id = this.id || uuid();
     this.commentService.addComment(this.comment);
 
-    this.comment = {} as CommentData;
     this.submitForm.emit();
+    this.comment = {} as CommentData;
+    this.addCommentForm.reset();
+    formDirective.resetForm();
   }
 }

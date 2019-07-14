@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
 import { DeleteCommentDialogComponent } from './components/comment/delete-comment-dialog/delete-comment-dialog.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { environment } from '../environments/environment';
 
 const materialModuleImports = [
   MatToolbarModule,
@@ -46,7 +48,8 @@ const materialModuleImports = [
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ...materialModuleImports
+    ...materialModuleImports,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   entryComponents: [

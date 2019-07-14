@@ -18,6 +18,7 @@ import { CommentDetailsComponent } from './components/comment-details/comment-de
 import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { DeleteCommentDialogComponent } from './delete-comment-dialog/delete-comment-dialog.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 const materialModuleImports = [
   MatToolbarModule,
@@ -37,7 +38,8 @@ const materialModuleImports = [
     CommentDetailsComponent,
     CommentComponent,
     AddCommentComponent,
-    DeleteCommentDialogComponent
+    DeleteCommentDialogComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,

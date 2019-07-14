@@ -8,11 +8,14 @@
             {{ comment.date | date: 'dd.MM.yyyy, H:mm:ss' }}
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="!isInEditMode">
         {{ comment.title }}
     </mat-card-content>
+    <mat-card-content *ngIf="isInEditMode">
+            <app-comment-form [id]="comment.id" (submitForm)="initProps()"></app-comment-form>
+        </mat-card-content>
     <mat-card-actions *ngIf="isEditable">
-        <button mat-button color="primary">Edit</button>
+        <button mat-button color="primary" (click)="isInEditMode = !isInEditMode">{{ isInEditMode ? 'Cancel' : 'Edit' }}</button>
         <button mat-button color="accent" class="delete-button" (click)="deleteComment()">Delete</button>
     </mat-card-actions>
 </mat-card>

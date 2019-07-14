@@ -17,6 +17,7 @@ export class CommentComponent implements OnInit {
   @Input() isEditable: boolean;
 
   public imgSrc: string;
+  public isInEditMode: boolean;
 
   constructor(
     private commentService: CommentService,
@@ -25,7 +26,7 @@ export class CommentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imgSrc = this.getImgSrc(this.comment.type);
+    this.initProps();
   }
 
   public deleteComment(): void {
@@ -37,6 +38,11 @@ export class CommentComponent implements OnInit {
         this.router.navigate(['']);
       }
     });
+  }
+
+  public initProps(): void {
+    this.isInEditMode = false;
+    this.imgSrc = this.getImgSrc(this.comment.type);
   }
 
   private getImgSrc(type: string): string {

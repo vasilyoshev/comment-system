@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentData } from '../../shared/interfaces/comment.interface';
 import { CommentService } from './../../services/comment.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommentService } from './../../services/comment.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public comments: Array<CommentInfo>;
+  public comments: Array<CommentData>;
 
   constructor(private commentService: CommentService) {
     this.comments = this.commentService.comments;

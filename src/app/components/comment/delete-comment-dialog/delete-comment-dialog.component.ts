@@ -8,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DeleteCommentDialogComponent {
 
-  constructor(public dialogRef: MatDialogRef<DeleteCommentDialogComponent>) { }
+  constructor(private dialogRef: MatDialogRef<DeleteCommentDialogComponent>) { }
 
   public onNoClick(): void {
     this.dialogRef.close();

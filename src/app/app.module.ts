@@ -17,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
-import { DeleteCommentDialogComponent } from './components/delete-comment-dialog/delete-comment-dialog.component';
+import { DeleteCommentDialogComponent } from './components/comment/delete-comment-dialog/delete-comment-dialog.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 
 const materialModuleImports = [

@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentData } from '../../shared/interfaces/comment.interface';
 import { CommentService } from '../../services/comment.service';
-import { DeleteCommentDialogComponent } from '../delete-comment-dialog/delete-comment-dialog.component';
-import { CommentTypesEnum } from 'src/app/shared/enums/comment-types.enum';
+import { DeleteCommentDialogComponent } from './delete-comment-dialog/delete-comment-dialog.component';
+import { CommentTypesEnum } from '../../../app/shared/enums/comment-types.enum';
 
 @Component({
   selector: 'app-comment',
@@ -14,7 +14,7 @@ import { CommentTypesEnum } from 'src/app/shared/enums/comment-types.enum';
 })
 export class CommentComponent implements OnInit {
 
-  @Input() comment: CommentInfo;
+  @Input() comment: CommentData;
   @Input() isEditable: boolean;
 
   public imgSrc: string;
@@ -23,7 +23,7 @@ export class CommentComponent implements OnInit {
   constructor(
     private commentService: CommentService,
     private router: Router,
-    public dialog: MatDialog
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {

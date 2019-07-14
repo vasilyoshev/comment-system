@@ -12,10 +12,14 @@
         {{ comment.title }}
     </mat-card-content>
     <mat-card-content *ngIf="isInEditMode">
-            <app-comment-form [id]="comment.id" (submitForm)="initProps()"></app-comment-form>
-        </mat-card-content>
+        <app-comment-form [id]="comment.id" (submitForm)="initProps()"></app-comment-form>
+    </mat-card-content>
     <mat-card-actions *ngIf="isEditable">
-        <button mat-button color="primary" (click)="isInEditMode = !isInEditMode">{{ isInEditMode ? 'Cancel' : 'Edit' }}</button>
-        <button mat-button color="accent" class="delete-button" (click)="deleteComment()">Delete</button>
+        <button mat-button color="primary" (click)="isInEditMode = !isInEditMode">
+            {{ isInEditMode ? 'Cancel' : 'Edit' }}
+        </button>
+        <button mat-button color="accent" class="delete-button" (click)="deleteComment()">
+            Delete
+        </button>
     </mat-card-actions>
 </mat-card>

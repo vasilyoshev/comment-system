@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentData } from '../../shared/interfaces/comment.interface';
 import { CommentService } from './../../services/comment.service';
 
 @Component({
@@ -14,12 +14,13 @@ import { CommentService } from './../../services/comment.service';
 })
 export class CommentDetailsComponent implements OnInit, OnDestroy {
 
-  public comment: CommentInfo;
+  public comment: CommentData;
 
   private onDestroy = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private commentService: CommentService
   ) { }
 
@@ -28,6 +29,9 @@ export class CommentDetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.onDestroy))
       .subscribe((params: ParamMap) => {
         this.comment = this.commentService.getComment(params.get('id'));
+        if (!this.comment) {
+          this.router.navigate(['']);
+        }
       });
   }
 

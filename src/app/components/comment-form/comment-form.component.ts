@@ -3,7 +3,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 import uuid from 'uuid/v4';
 
-import { CommentInfo } from '../../shared/interfaces/comment.interface';
+import { CommentData } from '../../shared/interfaces/comment.interface';
 import { CommentService } from '../../services/comment.service';
 import { CommentTypesEnum } from '../../../app/shared/enums/comment-types.enum';
 
@@ -17,7 +17,7 @@ export class CommentFormComponent implements OnInit {
   @Input() id: string;
   @Output() submitForm = new EventEmitter();
 
-  public comment: CommentInfo;
+  public comment: CommentData;
   public types: Array<CommentTypesEnum>;
   public addCommentForm: FormGroup;
 
@@ -33,7 +33,7 @@ export class CommentFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.comment = this.commentService.getComment(this.id) || {} as CommentInfo;
+    this.comment = this.commentService.getComment(this.id) || {} as CommentData;
     this.addCommentForm = this.fb.group({
       type: [this.comment.type, [Validators.required]],
       title: [this.comment.title, [Validators.required]]
@@ -51,7 +51,7 @@ export class CommentFormComponent implements OnInit {
     this.comment.id = this.id || uuid();
     this.commentService.addComment(this.comment);
 
-    this.comment = {} as CommentInfo;
+    this.comment = {} as CommentData;
     this.submitForm.emit();
   }
 }
